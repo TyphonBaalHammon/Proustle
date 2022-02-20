@@ -7,7 +7,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./mots/listeMotsProposablesU", "./mots/listeMotsProposablesT", "./mots/listeMotsProposablesA", "./mots/listeMotsProposablesC", "./mots/listeMotsProposablesI", "./mots/listeMotsProposablesE", "./mots/listeMotsProposablesH", "./mots/listeMotsProposablesS", "./mots/listeMotsProposablesO", "./mots/listeMotsProposablesB", "./mots/listeMotsProposablesD", "./mots/listeMotsProposablesF", "./mots/listeMotsProposablesG", "./mots/listeMotsProposablesJ", "./mots/listeMotsProposablesK", "./mots/listeMotsProposablesL", "./mots/listeMotsProposablesM", "./mots/listeMotsProposablesN", "./mots/listeMotsProposablesP", "./mots/listeMotsProposablesQ", "./mots/listeMotsProposablesR", "./mots/listeMotsProposablesV", "./mots/listeMotsProposablesW", "./mots/listeMotsProposablesX", "./mots/listeMotsProposablesY", "./mots/listeMotsProposablesZ", "./mots/listeMotsATrouver"], factory);
+        define(["require", "exports", "./mots/listeMotsProposablesU", "./mots/listeMotsProposablesT", "./mots/listeMotsProposablesA", "./mots/listeMotsProposablesC", "./mots/listeMotsProposablesI", "./mots/listeMotsProposablesE", "./mots/listeMotsProposablesH", "./mots/listeMotsProposablesS", "./mots/listeMotsProposablesO", "./mots/listeMotsProposablesB", "./mots/listeMotsProposablesD", "./mots/listeMotsProposablesF", "./mots/listeMotsProposablesG", "./mots/listeMotsProposablesJ", "./mots/listeMotsProposablesK", "./mots/listeMotsProposablesL", "./mots/listeMotsProposablesM", "./mots/listeMotsProposablesN", "./mots/listeMotsProposablesP", "./mots/listeMotsProposablesQ", "./mots/listeMotsProposablesR", "./mots/listeMotsProposablesV", "./mots/listeMotsProposablesW", "./mots/listeMotsProposablesX", "./mots/listeMotsProposablesY", "./mots/listeMotsProposablesZ", "./mots/listeMotsATrouver", "./dates"], factory);
     }
 })(function (require, exports) {
     "use strict";
@@ -39,19 +39,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     var listeMotsProposablesY_1 = __importDefault(require("./mots/listeMotsProposablesY"));
     var listeMotsProposablesZ_1 = __importDefault(require("./mots/listeMotsProposablesZ"));
     var listeMotsATrouver_1 = __importDefault(require("./mots/listeMotsATrouver"));
+    var dates_1 = require("./dates");
     var Dictionnaire = /** @class */ (function () {
         function Dictionnaire() {
         }
         Dictionnaire.prototype.getMot = function (datePartie) {
             var aujourdhui = datePartie.getTime();
-            var dateOrigine = new Date(2022, 1, 20);
-            var origine = dateOrigine.getTime();
+            //let dateOrigine = new Date(2022, 1, 20);
+            var origine = dates_1.dateOrigine.getTime();
             console.log(datePartie);
-            console.log(dateOrigine);
+            console.log(dates_1.dateOrigine);
             var numeroGrille = Math.floor((aujourdhui - origine) / (24 * 3600 * 1000));
             console.log(numeroGrille);
             var mot = listeMotsATrouver_1.default.Liste[numeroGrille % listeMotsATrouver_1.default.Liste.length];
-            console.log("REPONSE :" + mot);
             return mot;
         };
         Dictionnaire.prototype.estMotValide = function (mot) {

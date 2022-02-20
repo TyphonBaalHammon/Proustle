@@ -1,6 +1,7 @@
 import LettreResultat from "./lettreResultat";
 import { LettreStatut } from "./lettreStatut";
 import NotificationMessage from "./notificationMessage";
+import { dateOrigine } from "./dates";
 
 export default class FinDePartiePanel {
   private readonly _finDePartiePanel: HTMLElement;
@@ -56,7 +57,7 @@ export default class FinDePartiePanel {
         }, "")
     );
     let dateGrille = this._datePartie.getTime();
-    let origine = new Date(2022, 0, 8).getTime();
+    let origine = dateOrigine.getTime();
 
     let numeroGrille = Math.floor((dateGrille - origine) / (24 * 3600 * 1000)) + 1;
 

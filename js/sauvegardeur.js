@@ -57,9 +57,9 @@
             var config = JSON.parse(dataConfig);
             return config;
         };
-        Sauvegardeur._cleStats = "stats";
-        Sauvegardeur._clePartieEnCours = "partieEnCours";
-        Sauvegardeur._cleConfiguration = "configuration";
+        Sauvegardeur._cleStats = "proustle_stats";
+        Sauvegardeur._clePartieEnCours = "proustle_partieEnCours";
+        Sauvegardeur._cleConfiguration = "proustle_configuration";
         return Sauvegardeur;
     }());
     exports.default = Sauvegardeur;

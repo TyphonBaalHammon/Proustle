@@ -7,13 +7,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./lettreStatut", "./notificationMessage"], factory);
+        define(["require", "exports", "./lettreStatut", "./notificationMessage", "./dates"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var lettreStatut_1 = require("./lettreStatut");
     var notificationMessage_1 = __importDefault(require("./notificationMessage"));
+    var dates_1 = require("./dates");
     var FinDePartiePanel = /** @class */ (function () {
         function FinDePartiePanel(datePartie) {
             var _this = this;
@@ -56,7 +57,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
                 }, "");
             });
             var dateGrille = this._datePartie.getTime();
-            var origine = new Date(2022, 0, 8).getTime();
+            var origine = dates_1.dateOrigine.getTime();
             var numeroGrille = Math.floor((dateGrille - origine) / (24 * 3600 * 1000)) + 1;
             this._resumeTexte = "PROUSTLE #" + numeroGrille + " " + (estBonneReponse ? resultats.length : "-") + "/6\n\n" + resultatsEmojis.join("\n");
             this._resume.innerText = this._resumeTexte;

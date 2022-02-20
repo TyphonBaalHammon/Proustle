@@ -25,12 +25,13 @@ import ListeMotsProposablesX from "./mots/listeMotsProposablesX";
 import ListeMotsProposablesY from "./mots/listeMotsProposablesY";
 import ListeMotsProposablesZ from "./mots/listeMotsProposablesZ";
 import ListeMotsATrouver from "./mots/listeMotsATrouver";
+import { dateOrigine } from "./dates";
 export default class Dictionnaire {
   public constructor() {}
 
   public getMot(datePartie: Date): string {
     let aujourdhui = datePartie.getTime();
-    let dateOrigine = new Date(2022, 1, 20);
+    //let dateOrigine = new Date(2022, 1, 20);
     let origine = dateOrigine.getTime();
     
     console.log(datePartie)

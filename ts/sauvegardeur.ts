@@ -4,9 +4,9 @@ import SauvegardePartie from "./sauvegardePartie";
 import SauvegardeStats from "./sauvegardeStats";
 
 export default class Sauvegardeur {
-  private static readonly _cleStats = "stats";
-  private static readonly _clePartieEnCours = "partieEnCours";
-  private static readonly _cleConfiguration = "configuration";
+  private static readonly _cleStats = "proustle_stats";
+  private static readonly _clePartieEnCours = "proustle_partieEnCours";
+  private static readonly _cleConfiguration = "proustle_configuration";
 
   public static sauvegarderStats(stats: SauvegardeStats): void {
     localStorage.setItem(this._cleStats, JSON.stringify(stats));
