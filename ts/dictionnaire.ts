@@ -30,10 +30,11 @@ export default class Dictionnaire {
 
   public getMot(datePartie: Date): string {
     let aujourdhui = datePartie.getTime();
-    let origine = new Date(2022, 1, 20).getTime();
+    let dateOrigine = new Date(2022, 1, 20);
+    let origine = dateOrigine.getTime();
     
-    console.log(aujourdhui)
-    console.log(origine)
+    console.log(datePartie)
+    console.log(dateOrigine)
 
     let numeroGrille = Math.floor((aujourdhui - origine) / (24 * 3600 * 1000));
     

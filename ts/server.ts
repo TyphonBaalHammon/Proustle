@@ -4,10 +4,12 @@ import http from "http";
 const app = express();
 const port = 4000;
 (async () => {
+  console.log("STARTED")
   app.use("/", express.static("public/"));
   app.use("/js", express.static("js/"));
   app.use("/ts", express.static("ts/"));
   app.use("/node_modules/requirejs/require.js", express.static("node_modules/requirejs/require.js"));
+  console.log("LOADED")
 
   app.use(express.json());
   const server = http.createServer(app);
