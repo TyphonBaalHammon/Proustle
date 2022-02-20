@@ -41,8 +41,7 @@ export default class Dictionnaire {
     console.log(numeroGrille)
     
     let mot = ListeMotsATrouver.Liste[numeroGrille % ListeMotsATrouver.Liste.length]
-    console.log("REPONSE :"+mot)
-
+    
     return mot;
   }
 
