@@ -1,5 +1,5 @@
 {
-  "name": "sutom",
+  "name": "proustle",
   "version": "1.0.0",
   "description": "Jeu de lettres en ligne (et en français)",
   "main": "js/main.js",
@@ -24,7 +24,7 @@
     "word",
     "word game"
   ],
-  "author": "JonathanMM <jonathanmm@free.fr>",
-  "repository": "https://framagit.org/JonathanMM/sutom",
+  "author": "TyphonBaalAmmon",
+  "repository": "https://github.com/TyphonBaalHammon/proustle",
   "license": "MIT"
 }
