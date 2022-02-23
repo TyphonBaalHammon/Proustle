@@ -29,10 +29,13 @@ if __name__=="__main__":
 	
 	header_liste_reponses = """export default class ListeMotsATrouver { \n    public static readonly Liste: Array<string> = """
 	
-	with open("ts/mots/listeMotsATrouver.ts","w") as outfile_reponse:
-		outfile_reponse.write(header_liste_reponses)
-		outfile_reponse.write(str(reponses))
-		outfile_reponse.write("; }")
+	#ATTENTION : NE PAS DÉCOMMENTER CES LIGNES
+	#LA LISTE DES MOTS À TROUVER EST DÉSORMAIS GELÉE DANS UN ORDRE PRÉCIS
+	#with open("ts/mots/listeMotsATrouver.ts","w") as outfile_reponse:
+	#	outfile_reponse.write(header_liste_reponses)
+	#	outfile_reponse.write(str(reponses))
+	#	outfile_reponse.write("; }")
+	
 	
 	letterz = defaultdict(set)
 	
