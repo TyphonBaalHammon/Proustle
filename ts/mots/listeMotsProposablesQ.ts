@@ -1075,6 +1075,7 @@ export default class ListeMotsProposablesQ {
 "QUENOUILLON",
 "QUENSONT",
 "QUENTIN",
+"QUENTINE",
 "QUENTINOISE",
 "QUENTINOISES",
 "QUENTREC",

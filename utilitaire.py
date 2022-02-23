@@ -17,7 +17,7 @@ def unaccentize(xs):
 
 reponses = list(map(unaccentize,reponses_brutes))
 
-#random.shuffle(reponses)
+random.shuffle(reponses)
 
 MAX_LENGTH = len(max(reponses,key=len))
 MIN_LENGTH = len(min(reponses,key=len))
@@ -41,7 +41,7 @@ if __name__=="__main__":
 		mot = unaccentize(line)
 		l = len(mot)
 		
-		if MIN_LENGTH < l < MAX_LENGTH and not (set(mot) & set("'- ")):
+		if MIN_LENGTH < l < MAX_LENGTH and not (set(mot) & set("'- .&#160;")):
 			letter = mot[0]
 				
 			letterz[letter].add(mot)

@@ -1088,6 +1088,7 @@
             "QUENOUILLON",
             "QUENSONT",
             "QUENTIN",
+            "QUENTINE",
             "QUENTINOISE",
             "QUENTINOISES",
             "QUENTREC",
