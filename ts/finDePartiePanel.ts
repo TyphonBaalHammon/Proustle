@@ -26,18 +26,30 @@ export default class FinDePartiePanel {
 
     this._resumeBouton.addEventListener("click", (event) => {
       event.stopPropagation();
-      if (!navigator.clipboard) {
+      /*if (!navigator.clipboard) {
         NotificationMessage.ajouterNotification("Votre navigateur n'est pas compatible");
-      }
+      }*/
 
       navigator.clipboard
-        .writeText(this._resumeTexte + "\n\n")
+        .writeText(this._resumeTexte + "\n\nhttps://proustle.glitch.me")
+        .then(() => {
+          NotificationMessage.ajouterNotification("Résumé copié dans le presse papier");
+        })
+        .catch(
+          () =>
+            new Promise((resolve, reject) => {
+              if (window.navigator.share !== undefined) return resolve(navigator.share({ text: this._resumeTexte + "\n\nhttps://proustle.glitch.me" }));
+
+              return reject();
+            })
+        )
         .then(() => {
           NotificationMessage.ajouterNotification("Résumé copié dans le presse papier");
         })
         .catch((raison) => {
           NotificationMessage.ajouterNotification("Votre navigateur n'est pas compatible");
         });
+
     });
   }
 

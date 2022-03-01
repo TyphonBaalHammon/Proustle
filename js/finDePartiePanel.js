@@ -28,11 +28,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             this._datePartie = datePartie;
             this._resumeBouton.addEventListener("click", function (event) {
                 event.stopPropagation();
-                if (!navigator.clipboard) {
-                    notificationMessage_1.default.ajouterNotification("Votre navigateur n'est pas compatible");
-                }
+                /*if (!navigator.clipboard) {
+                  NotificationMessage.ajouterNotification("Votre navigateur n'est pas compatible");
+                }*/
                 navigator.clipboard
-                    .writeText(_this._resumeTexte + "\n\n")
+                    .writeText(_this._resumeTexte + "\n\nhttps://proustle.glitch.me")
+                    .then(function () {
+                    notificationMessage_1.default.ajouterNotification("Résumé copié dans le presse papier");
+                })
+                    .catch(function () {
+                    return new Promise(function (resolve, reject) {
+                        if (window.navigator.share !== undefined)
+                            return resolve(navigator.share({ text: _this._resumeTexte + "\n\nhttps://proustle.glitch.me" }));
+                        return reject();
+                    });
+                })
                     .then(function () {
                     notificationMessage_1.default.ajouterNotification("Résumé copié dans le presse papier");
                 })
