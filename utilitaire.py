@@ -44,7 +44,7 @@ if __name__=="__main__":
 		mot = unaccentize(line)
 		l = len(mot)
 		
-		if MIN_LENGTH < l < MAX_LENGTH and not (set(mot) & set("'- .&#160;")):
+		if MIN_LENGTH <= l <= MAX_LENGTH and not (set(mot) & set("'- .&#160;")):
 			letter = mot[0]
 				
 			letterz[letter].add(mot)
